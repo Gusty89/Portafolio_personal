@@ -23,7 +23,7 @@ function About() {
         </div>
         <div className="skill-card">
           <h3>Misión</h3>
-          <p>Crear proyectos visuales, limpios y fáciles de usar.</p>
+          <p>Crear proyectos visuales, limpios, funcionales y centrados en la experiencia del usuario.</p>
         </div>
       </div>
     </section>
