@@ -23,11 +23,10 @@ function Hero() {
       </div>
       <div className="hero-card">
         <div className="hero-card-content">
-          <span className="badge">Frontend & UI</span>
-          <h2>Trabajo con React, Vite y CSS moderno</h2>
+          <span className="badge">Frontend, Backend & Databases</span>
+          <h2>React, Vite, CSS, Node.js, express, MySQL, PostgreSQL</h2>
           <p>
-            Diseño experiencias intuitivas y páginas estáticas rápidas, perfectas para mostrar tu
-            perfil profesional.
+            Aplicaciones web funcionales y modernas, conectadas a bases de datos.
           </p>
         </div>
       </div>

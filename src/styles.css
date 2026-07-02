@@ -123,10 +123,15 @@ a {
   margin: 0 0 18px;
 }
 
+.intro h2 {
+  text-align: center;
+}
+
 .intro p {
   max-width: 640px;
-  margin-bottom: 24px;
+  margin: 0 auto 24px;
   color: #475569;
+  text-align: center;
 }
 
 .skills-grid,

@@ -19,7 +19,7 @@ function About() {
         </div>
         <div className="skill-card">
           <h3>Tecnologías</h3>
-          <p>React, Vite, HTML5, CSS3, JavaScript y diseño responsive.</p>
+          <p>React, Vite, CSS, Node.js, Express, MySQL, PostgreSQL y diseño responsive.</p>
         </div>
         <div className="skill-card">
           <h3>Misión</h3>
