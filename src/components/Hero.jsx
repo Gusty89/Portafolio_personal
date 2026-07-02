@@ -1,7 +1,10 @@
 
-function Hero() {
+function Hero({ theme, onToggleTheme }) {
   return (
     <section className="hero">
+      <button type="button" className="button button-secondary theme-toggle" onClick={onToggleTheme}>
+        {theme === 'dark' ? 'Modo claro' : 'Modo oscuro'}
+      </button>
       <div className="hero-copy">
         <p className="eyebrow">Hola, soy Gustavo David Paniagua <br/> 
         analista de sistemas y desarrollador web.<br/>
