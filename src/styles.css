@@ -37,6 +37,35 @@ a {
   cursor: pointer;
 }
 
+.skip-link {
+  position: absolute;
+  top: -999px;
+  left: 1rem;
+  background: #2563eb;
+  color: #ffffff;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  z-index: 100;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 1rem;
+  outline: 3px solid #ffffff;
+  outline-offset: 4px;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 4px;
+}
+
+button,
+a {
+  transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
 .app-shell {
   max-width: 1180px;
   margin: 0 auto;
@@ -129,6 +158,99 @@ a {
 .hero-card-content {
   display: grid;
   gap: 16px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.speech-button {
+  position: relative;
+  width: 54px;
+  height: 54px;
+  min-width: 54px;
+  padding: 0;
+  border-radius: 50%;
+  color: #2563eb;
+  border-color: #2563eb;
+  background: rgba(37, 99, 235, 0.06);
+  box-shadow: inset 0 0 0 1px rgba(37, 99, 235, 0.18);
+  justify-content: center;
+  font-weight: 700;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.speech-button span {
+  font-size: 1.2rem;
+}
+
+.speech-button:hover:not(:disabled) {
+  background: rgba(37, 99, 235, 0.16);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.08);
+}
+
+.speech-button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.speech-button-active {
+  background: #2563eb;
+  color: white;
+  border-color: transparent;
+}
+
+.speech-button-active:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.speech-button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.speech-button:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 4px;
+}
+
+.speech-button[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) scale(0.92);
+  opacity: 0;
+  white-space: nowrap;
+  font-size: 0.85rem;
+  line-height: 1.2;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.92);
+  color: #f8fafc;
+  pointer-events: none;
+  transition: opacity 0.24s ease, transform 0.24s ease;
+}
+
+.speech-button:hover[data-tooltip]:not(:disabled),
+.speech-button:focus-visible[data-tooltip] {
+  outline: none;
+}
+
+.speech-button:hover[data-tooltip]::after,
+.speech-button:focus-visible[data-tooltip]::after {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+.speech-controls {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
 }
 
 .badge {
@@ -239,6 +361,26 @@ a {
   flex-wrap: wrap;
   gap: 10px;
   margin: 16px 0;
+}
+
+.project-entry {
+  margin-top: 24px;
+}
+
+.project-entry h3 {
+  margin-bottom: 12px;
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #2563eb;
+  font-weight: 700;
+}
+
+.project-link:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 4px;
 }
 
 .project-tech span {

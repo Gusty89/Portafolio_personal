@@ -24,8 +24,9 @@ function App() {
 
   return (
     <div className="app-shell">
+      <a className="skip-link" href="#main-content">Saltar al contenido</a>
       <Hero theme={theme} onToggleTheme={toggleTheme} />
-      <main>
+      <main id="main-content">
         <About />
         <Projects />
         <Contact />
