@@ -39,9 +39,9 @@ function About({ theme }) { // 1. Recibimos 'theme' como prop
               >gradué</a> en la Universidad Nacional de José C. Paz, Buenos Aires, Argentina.
             </p>
 
-            <p className="about-summary">📌 Mi formación académica me permitió desarrollar conocimientos en análisis de requerimientos, bases de datos, desarrollo web y trabajo en equipo mediante proyectos reales.</p>
+            <p className="about-summary">📌Mi formación académica me permitió desarrollar conocimientos en análisis de requerimientos, bases de datos, desarrollo web y trabajo en equipo mediante proyectos reales.</p>
 
-            <p className="about-summary">🎯 Estoy en búsqueda de oportunidades como Analista Funcional, Analista de Sistemas o Desarrollador Web para aportar mis conocimientos y continuar creciendo profesionalmente.</p>
+            <p className="about-summary">🎯Estoy en búsqueda de oportunidades como Analista Funcional, Analista de Sistemas o Desarrollador Web para aportar mis conocimientos y continuar creciendo profesionalmente.</p>
 
             <p className="about-summary">🤝¡Estoy abierto a nuevos desafíos, oportunidades laborales y a conectar con profesionales del sector IT!</p>
           </div>

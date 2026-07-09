@@ -95,12 +95,17 @@ a {
   color: #111827;
   text-decoration: none;
   font-weight: 600;
-  padding: 10px 14px;
+  
+  /* CAMBIO AQUÍ: Más padding a los lados (16px) que arriba/abajo (8px) */
+  padding: 16px 16px; 
+  
   border-radius: 999px;
   border: 1px solid transparent;
   transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  
+  /* Asegura que el texto no se ajuste de forma extraña */
+  white-space: nowrap; 
 }
-
 .site-nav a:hover,
 .site-nav a:focus-visible {
   background: rgba(37, 99, 235, 0.12);
@@ -184,9 +189,9 @@ a {
   flex-shrink: 0;
   border: 4px solid rgba(37, 99, 235, 0.16);
   background: #ffffff;
-  margin-top: 24px;
+  margin-top: -100px;
   margin-bottom: 0;
-  align-self: flex-end;
+  align-self: center;
 }
 
 .stack-label {
@@ -213,9 +218,22 @@ a {
 
 .hero-identity-text {
   display: grid;
-  gap: 12px;
+  gap: 0px; /* Espaciado interno entre elementos */
+  padding-top: 20px; /* Esto bajará todo el bloque de texto desde el borde superior */
+  margin: 10px;
 }
 
+.hero-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.hero-role {
+  margin: 0 0 10px 0; /* Espacio extra debajo del rol */
+  color: #475569;
+  padding: 0 10px;
+}
 .hero-social-row {
   display: flex;
   align-items: center;
@@ -286,22 +304,6 @@ a {
   transform: translateX(-50%) scale(1);
 }
 
-.hero-name {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin: 0;
-}
-
-.hero-role {
-  margin: 0;
-  color: #475569;
-}
-
-.hero-social {
-  display: flex;
-  gap: 12px;
-  margin-top: 8px;
-}
 
 .social-link {
   width: 44px;
@@ -310,10 +312,24 @@ a {
   align-items: center;
   justify-content: center;
   border-radius: 999px;
-  border: 1px solid rgba(37, 99, 235, 0.16);
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Un borde más neutro */
   background: rgba(255, 255, 255, 0.84);
-  color: #2563eb;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+  color: #555; /* Color gris oscuro por defecto para todos */
+  transition: all 0.3s ease;
+}
+
+/* Colores específicos al pasar el mouse */
+.social-link--linkedin:hover { color: #0077B5; border-color: #0077B5; }
+.social-link--github:hover   { color: #333333; border-color: #333333; }
+.social-link--email:hover    { color: #D44638; border-color: #D44638; }
+.social-link--whatsapp:hover { color: #25D366; border-color: #25D366; }
+.social-link--download:hover { color: #FF9800; border-color: #FF9800; }
+
+/* Efecto al hacer hover */
+.social-link:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background-color: #ffffff;
 }
 
 .social-link svg {
@@ -359,6 +375,31 @@ a {
   flex-wrap: wrap;
 }
 
+/* Contenedor padre de las acciones */
+.hero-actions-container {
+  display: flex;
+  flex-direction: column; /* Móvil: apilado */
+  align-items: center;
+  gap: 20px;
+  margin-top: 5px;
+  width: 100%;
+}
+
+/* Contenedor de iconos sociales */
+.hero-social {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* Botón de audio: Quitamos el margen negativo */
+.hero-audio-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
+}
+
 .button {
   display: inline-flex;
   align-items: center;
@@ -388,17 +429,22 @@ a {
 }
 
 .theme-toggle {
-  min-width: 160px;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  z-index: 2;
-  background: rgba(255, 255, 255, 0.92);
-  color: #111827;
-  border-color: rgba(15, 23, 42, 0.12);
-  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.12);
-  transition: background 1.0s ease-in-out, color 1.0s ease-in-out, 
-  border-color 0.6s ease-in-out, box-shadow 0.6s ease-in-out;
+  width: 44px !important;  /* Forzamos el ancho */
+  height: 44px !important; /* Forzamos el alto */
+  min-width: 44px !important;
+  border-radius: 100% !important;
+  
+  /* Esto es lo más importante para evitar que el padre lo estire */
+  flex-shrink: 0; 
+  align-self: center;
+  
+  /* Mantén el resto de tus estilos... */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 10px auto 16px auto;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 
@@ -600,11 +646,98 @@ a {
   text-align: justify;
 }
 
-@media (max-width: 640px) {
-  .intro-list li {
-    gap: 10px;
+/* Corrección para dispositivos móviles (Captura) */
+@media (max-width: 600px) {
+  /* 1. Apilar la identidad y el texto */
+  .hero-identity {
+    flex-direction: column !important;
+    text-align: center;
+    gap: 16px;
   }
 
+  /* 2. Ajustar el contenedor de acciones */
+  .hero-actions-container {
+    flex-direction: column !important;
+    gap: 20px !important;
+    margin-top: 20px;
+    align-items: center;
+  }
+
+  /* 3. Evitar que el título sea gigantesco y se corte */
+  #hero-title {
+    font-size: 1.5rem !important; /* Ajusta este valor si sigue siendo grande */
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .hero-title-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;    /* Centra horizontalmente el título y botón */
+  text-align: center;     /* Asegura que el texto dentro del h1 se centre */
+  justify-content: justify;
+  width: 100%;            /* Toma todo el ancho disponible */
+  padding: 0 15px;        /* Un poco de aire a los lados en móvil */
+  margin: 20px 0;         /* Espacio arriba y abajo */
+}
+
+/* Ajuste específico para el título */
+  #hero-title {
+    margin: 0;              /* Elimina márgenes por defecto del navegador */
+    text-align: center;
+  }
+  .hero-description {
+    text-align: center;      /* Centra el texto */
+    max-width: 80%;          /* Evita que sea muy ancho en pantallas grandes */
+    margin: 16px auto;       /* Centra el bloque horizontalmente */
+    color: #ffffff;          /* Ajusta a tu color deseado */
+    line-height: 1.6;
+  }
+  .hero-card-content{
+    text-align: center;      /* Centra el texto */
+    max-width: 80%;          /* Evita que sea muy ancho en pantallas grandes */
+    margin: 16px auto;       /* Centra el bloque horizontalmente */
+    color: #ffffff;          /* Ajusta a tu color deseado */
+    line-height: 1.6;
+  }
+  .hero-description-stack{
+    text-align: center;      /* Centra el texto */
+    max-width: 80%;          /* Evita que sea muy ancho en pantallas grandes */
+    margin: 16px auto;       /* Centra el bloque horizontalmente */
+    color: #ffffff;          /* Ajusta a tu color deseado */
+    line-height: 1.6;
+  }
+
+  /* 4. Asegurar que la foto no se desborde */
+  .hero-photo-wrap {
+    margin-top: 5px; /* Ajusta este número para bajarla más o menos */
+    margin-bottom: 20px;
+  }
+
+  .site-header {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* ESTO CENTRA TODO VERTICALMENTE */
+  padding: 14px 14px;
+  margin-bottom: 12px;
+  gap: 20px;           /* Espacio entre el menú y el botón del sol */
+  }
+  
+  .site-nav a {
+    color: #111827;
+    text-decoration: none;
+    font-weight: 600;
+  
+    /* CAMBIO AQUÍ: Más padding a los lados (16px) que arriba/abajo (8px) */
+    padding: 16px 16px; 
+  
+    border-radius: 999px;
+    border: 1px solid transparent;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  
+  /* Asegura que el texto no se ajuste de forma extraña */
+    white-space: nowrap; 
+  }
   .intro-icon {
     flex: 0 0 28px;
     font-size: 1.1rem;
@@ -637,6 +770,35 @@ a {
   .section {
     padding: 32px 0;
   }
+
+  .theme-toggle {
+  width: 44px !important;  /* Forzamos el ancho */
+  height: 44px !important; /* Forzamos el alto */
+  min-width: 44px !important;
+  border-radius: 100% !important;
+  
+  /* Esto es lo más importante para evitar que el padre lo estire */
+  flex-shrink: 0; 
+  align-self: right;
+  
+  /* Mantén el resto de tus estilos... */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+  margin: 8px !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.audio-controls-container {
+  display: flex;
+  justify-content: center; /* Esto es lo que centra los botones horizontalmente */
+  align-items: center;
+  gap: 10px;               /* Espacio entre el botón de play y stop */
+  margin-top: 15px;        /* Un poco de aire superior */
+  width: 100%;
+}
+
 }
 
 .skills-grid,
@@ -1088,4 +1250,50 @@ a {
 :root.dark .contact-form input,
 :root.dark .contact-form textarea {
   border-color: #475569;
+}
+
+.tech-stack-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  margin: 25px 0;
+  padding: 10px;
+  position: relative;
+}
+
+.tech-icon {
+  font-size: 2.5rem; /* Tamaño de los iconos */
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  z-index: 1;
+}
+
+.tech-icon:hover {
+  transform: scale(1.3) translateY(-5px);
+}
+
+/* El tooltip que aparece al pasar el cursor */
+.tech-icon::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+
+.tech-icon:hover::after {
+  opacity: 1;
+  visibility: visible;
 }
