@@ -28,11 +28,9 @@ function About() {
                 >gradué</a> en la Universidad Nacional de José C. Paz, Buenos Aires, Argentina.
             </p>
 
-            <p className="about-summary">📌 Durante mi formación académica adquirí conocimientos en relevamiento y análisis de requerimientos, modelado de procesos, diseño de bases de datos, desarrollo de aplicaciones web y documentación de proyectos, participando en proyectos individuales y colaborativos que fortalecieron mi capacidad para transformar necesidades de negocio en soluciones tecnológicas.</p>
+            <p className="about-summary">📌 Mi formación académica me permitió desarrollar conocimientos en análisis de requerimientos, bases de datos, desarrollo web y trabajo en equipo mediante proyectos reales.</p>
 
-            <p className="about-summary">📚 Estoy comprometido con el aprendizaje continuo, la mejora constante y la incorporación de nuevas tecnologías y metodologías de trabajo.</p>
-
-            <p className="about-summary">🎯 Busco oportunidades como Analista Funcional, Analista de Sistemas o Desarrollador Web, donde pueda aportar una visión integral entre el negocio y la tecnología, seguir desarrollándome profesionalmente y contribuir al desarrollo de soluciones eficientes, escalables y de calidad.</p>
+            <p className="about-summary">🎯 Estoy en búsqueda de oportunidades como Analista Funcional, Analista de Sistemas o Desarrollador Web para aportar mis conocimientos y continuar creciendo profesionalmente.</p>
 
             <p className="about-summary">🤝 ¡Estoy abierto a nuevos desafíos, oportunidades laborales y a conectar con profesionales del sector IT!</p>
           </div>
