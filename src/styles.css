@@ -662,7 +662,9 @@ a {
 }
 
 .about-card-content p {
-  text-align: justify;
+    max-width: 100%;
+    margin: 0 0 18px 0;
+    text-align: justify;
 }
 
 .about-summary {
