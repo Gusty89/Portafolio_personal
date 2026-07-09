@@ -153,15 +153,15 @@ a {
 
 .hero-title-row {
   display: flex;
-  gap: 16px;
-  align-items: flex-start;
+  gap: 10px;
+  align-items: end;
   justify-content: space-between;
   width: 100%;
 }
 
 .hero-title-row h1 {
   margin: 0;
-  max-width: 82%;
+  max-width: 80%;
 }
 
 .hero-identity {
@@ -462,6 +462,15 @@ a {
 .hero-card-content {
   display: grid;
   gap: 16px;
+}
+
+.audio-controls-container {
+  display: flex;
+  justify-content: right; /* Esto es lo que centra los botones horizontalmente */
+  align-items: center;
+  gap: 10px;               /* Espacio entre el botón de play y stop */
+  margin-top: 15px;        /* Un poco de aire superior */
+  width: 100%;
 }
 
 .hero-card .speech-controls {
@@ -779,7 +788,7 @@ a {
   
   /* Esto es lo más importante para evitar que el padre lo estire */
   flex-shrink: 0; 
-  align-self: right;
+  align-self: center;
   
   /* Mantén el resto de tus estilos... */
   display: flex;
