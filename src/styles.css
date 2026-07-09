@@ -397,8 +397,11 @@ a {
   color: #111827;
   border-color: rgba(15, 23, 42, 0.12);
   box-shadow: 0 8px 28px rgba(15, 23, 42, 0.12);
-  transition: background 0.35s ease, color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  transition: background 1.0s ease-in-out, color 1.0s ease-in-out, 
+  border-color 0.6s ease-in-out, box-shadow 0.6s ease-in-out;
 }
+
+
 
 .hero-card {
   background: rgba(255, 255, 255, 0.88);
@@ -1026,4 +1029,63 @@ a {
   .project-grid {
     gap: 18px;
   }
+}
+
+
+/* Estilos base */
+.app-shell.light {
+  background-color: white;
+  color: black;
+}
+
+.app-shell.dark {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+/* Cualquier componente hijo puede usar esto */
+.app-shell.dark .footer-links a {
+  color: #a0a0a0; /* Color especial para el modo oscuro */
+}
+
+.footer-links {
+  display: flex;        /* Activa el diseño flexible */
+  justify-content: center; /* Centra los elementos horizontalmente */
+  gap: 20px;            /* Crea un espacio de 20px entre cada enlace */
+  margin-top: 10px;     /* Opcional: un poco de espacio con el texto de arriba */
+}
+
+.footer-content {
+  text-align: center;
+}
+
+.contact-form {
+  display: grid;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  background: transparent;
+  color: inherit;
+  font-family: inherit;
+}
+
+.contact-form button {
+  justify-self: start;
+}
+
+:root.dark .contact-form input,
+:root.dark .contact-form textarea {
+  border-color: #475569;
 }

@@ -6,45 +6,37 @@ const certifications = [
     title: 'Introducción a la Ciberseguridad',
     issuer: 'Cisco Networking Academy',
     date: '19 de marzo de 2025',
-    description:
-      'Certificado emitido por Cisco Networking Academy tras completar el curso de fundamentos en seguridad informática.',
-    whatLearned:
-      'Lo que aprendí: Conceptos básicos de ciberseguridad, protección contra amenazas, controles de acceso, redes seguras y mejores prácticas para la defensa digital.',
+    description: 'Certificado emitido por Cisco Networking Academy tras completar el curso de fundamentos en seguridad informática.',
+    whatLearned: 'Lo que aprendí: Conceptos básicos de ciberseguridad, protección contra amenazas, controles de acceso, redes seguras y mejores prácticas para la defensa digital.',
     image: '/certificates/Ciberseguridad.jpeg',
   },
   {
     title: 'Python',
     issuer: 'Santander Open Academy',
     date: '9 de julio de 2025',
-    description:
-      'Certificado de finalización del curso de Python de 8 horas, con 2 módulos y una autoevaluación aprobada.',
-    whatLearned:
-      'Lo que aprendí: Programación en Python, manejo de variables, estructuras de control, funciones y automatización de tareas básicas.',
+    description: 'Certificado de finalización del curso de Python de 8 horas, con 2 módulos y una autoevaluación aprobada.',
+    whatLearned: 'Lo que aprendí: Programación en Python, manejo de variables, estructuras de control, funciones y automatización de tareas básicas.',
     image: '/certificates/Python.jpeg',
   },
   {
     title: 'Gestión de Proyectos y Fundamentos de metodología Agile',
     issuer: 'Santander Open Academy',
     date: '16 de julio de 2025',
-    description:
-      'Certificado de finalización del curso de 8 horas que cubre gestión de proyectos y conceptos fundamentales de metodologías ágiles.',
-    whatLearned:
-      'Lo que aprendí: Principios Agile, trabajo en equipo, planificación iterativa, prioridades de valor y coordinación efectiva en proyectos tecnológicos.',
+    description: 'Certificado de finalización del curso de 8 horas que cubre gestión de proyectos y conceptos fundamentales de metodologías ágiles.',
+    whatLearned: 'Lo que aprendí: Principios Agile, trabajo en equipo, planificación iterativa, prioridades de valor y coordinación efectiva en proyectos tecnológicos.',
     image: '/certificates/Agiles.jpeg',
   },
   {
     title: 'IT Customer Support Basics',
     issuer: 'Cisco Networking Academy',
     date: '25 de febrero de 2026',
-    description:
-      'Certificado de Cisco Networking Academy por completar el curso sobre soporte técnico y atención al cliente en entornos IT.',
-    whatLearned:
-      'Lo que aprendí: Resolución de problemas, soporte al usuario, procesos de servicio y comunicación efectiva dentro de equipos de tecnología.',
+    description: 'Certificado de Cisco Networking Academy por completar el curso sobre soporte técnico y atención al cliente en entornos IT.',
+    whatLearned: 'Lo que aprendí: Resolución de problemas, soporte al usuario, procesos de servicio y comunicación efectiva dentro de equipos de tecnología.',
     image: '/certificates/Soporte.jpeg',
   },
 ];
 
-function Certifications() {
+function Certifications({ theme }) { // 1. Recibimos la prop 'theme'
   const [activeImage, setActiveImage] = useState(null);
   const [activeTitle, setActiveTitle] = useState('');
 
@@ -67,7 +59,8 @@ function Certifications() {
     .join(' ');
 
   return (
-    <section className="section" id="certifications" aria-labelledby="certifications-title">
+    // 2. Aplicamos la clase dinámica ${theme}
+    <section className={`section ${theme}`} id="certifications" aria-labelledby="certifications-title">
       <div className="project-grid">
         <article className="project-card">
           <div className="section-header">
@@ -98,9 +91,7 @@ function Certifications() {
                 </div>
               </div>
               <p>{cert.description}</p>
-              <p>
-                {cert.whatLearned}
-              </p>
+              <p>{cert.whatLearned}</p>
             </article>
           ))}
           <p>
