@@ -1,0 +1,17 @@
+<svg width="900" height="600" viewBox="0 0 900 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="600" rx="36" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="4"/>
+  <rect x="40" y="40" width="820" height="120" rx="20" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <text x="72" y="82" fill="#B91C1C" font-size="24" font-weight="700">Santander Open Academy</text>
+  <text x="72" y="118" fill="#111827" font-size="34" font-weight="700">Gestión de Proyectos</text>
+  <text x="72" y="150" fill="#111827" font-size="28" font-weight="700">y Fundamentos de metodología Agile</text>
+  <text x="72" y="200" fill="#334155" font-size="20">Otorgado a Gustavo David Paniagua</text>
+  <path d="M72 240H828" stroke="#E2E8F0" stroke-width="2"/>
+  <text x="72" y="292" fill="#0F172A" font-size="18" font-weight="600">Curso completado el 16 de julio de 2025</text>
+  <foreignObject x="72" y="320" width="760" height="200">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: Arial, sans-serif; font-size: 16px; color: #475569; line-height: 1.5;">
+      Aprendí los conceptos clave de gestión ágil de proyectos, priorización de backlog, trabajo colaborativo y entrega continua en equipos de desarrollo.
+    </div>
+  </foreignObject>
+  <text x="72" y="540" fill="#6B7280" font-size="14">Santander Open Academy</text>
+  <text x="640" y="540" fill="#6B7280" font-size="14">16 Jul 2025</text>
+</svg>

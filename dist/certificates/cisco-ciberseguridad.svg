@@ -1,0 +1,17 @@
+<svg width="900" height="600" viewBox="0 0 900 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="600" rx="36" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="4"/>
+  <rect x="40" y="40" width="820" height="120" rx="20" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <text x="72" y="82" fill="#0F172A" font-size="24" font-weight="700">Cisco Networking Academy</text>
+  <text x="72" y="118" fill="#2563EB" font-size="38" font-weight="700">Introducción a la Ciberseguridad</text>
+  <text x="72" y="180" fill="#334155" font-size="20">Certificado otorgado a Gustavo David Paniagua</text>
+  <path d="M72 220H828" stroke="#CBD5E1" stroke-width="2"/>
+  <text x="72" y="272" fill="#0F172A" font-size="18" font-weight="600">Emitido por Cisco Networking Academy</text>
+  <text x="72" y="310" fill="#475569" font-size="16">Finalización: 19 de marzo de 2025</text>
+  <foreignObject x="72" y="340" width="760" height="180">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: Arial, sans-serif; font-size: 16px; color: #334155; line-height: 1.5;">
+      Curso centrado en fundamentos de seguridad de la información, controles de acceso y buenas prácticas para proteger sistemas y redes.
+    </div>
+  </foreignObject>
+  <text x="72" y="540" fill="#475569" font-size="14">Cisco Networking Academy</text>
+  <text x="640" y="540" fill="#475569" font-size="14">19 Mar 2025</text>
+</svg>

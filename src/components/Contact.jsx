@@ -1,7 +1,7 @@
 import ReadSection from './ReadSection.jsx';
 
 function Contact() {
-  const contactText = `Estoy disponible para nuevos proyectos o colaboraciones. Email: paniaguagustavodavid@gmail.com. GitHub: https://github.com/Gusty89. LinkedIn: https://www.linkedin.com/in/gustavo-david-paniagua/`;
+  const contactText = `Contacto, Estoy disponible para nuevos proyectos o colaboraciones. Email: paniaguagustavodavid@gmail.com. GitHub: https://github.com/Gusty89. LinkedIn: https://www.linkedin.com/in/gustavo-david-paniagua/`;
 
   return (
     <section className="section contact-section" aria-labelledby="contact-title">
